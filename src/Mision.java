@@ -6,7 +6,14 @@ public class Mision {
     private int recompensaExperiencia;
     private boolean completada;
 
-
+    /**
+     * metodo constructor de la clase Mision
+     * @param id
+     * @param nombre
+     * @param dificultad
+     * @param nivelRecomendado
+     * @param recompensaExperiencia
+     */
     public Mision(int id, String nombre, String dificultad, int nivelRecomendado, int recompensaExperiencia) {
         this.id = id;
         this.nombre = nombre;
@@ -14,32 +21,65 @@ public class Mision {
         this.nivelRecomendado = nivelRecomendado;
         this.recompensaExperiencia = recompensaExperiencia;
         this.completada = false;
-
     }
+
+    /**
+     * getter del id
+     * @return el id de la mision
+     */
 
     public int getId() {
         return id;
     }
 
+    /**
+     * getter del nombre
+     * @return nombre de la mision
+     */
+
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     * getter de la dificultad de la mision
+     * @return nombre de la dificultad de la mision
+     */
     public String getDificultad() {
         return dificultad;
     }
+
+    /**
+     * getter del nivel recomendado para realizar la mision
+     * @return el nivel recomendado para realizar la mision
+     */
 
     public int getNivelRecomendado() {
         return nivelRecomendado;
     }
 
+    /**
+     * getter de la recompensa de completar la mision
+     * @return la recompensa por completar la mision
+     */
+
     public int getRecompensaExperiencia() {
         return recompensaExperiencia;
     }
 
+    /**
+     * getter del estado de haber completado la mision
+     * @return true si se completó la mision, false si no
+     */
+
     public boolean isCompletada() {
         return completada;
     }
+
+    /**
+     * toString de la clase Mision
+     * @return la informacion de la mision en formato toString
+     */
 
     @Override
     public String toString() {
