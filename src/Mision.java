@@ -99,7 +99,7 @@ public class Mision {
         sb.append(" - experiencia: ");
         sb.append(recompensaExperiencia);
 
-        sb.append(" - completada: ");
+        sb.append(" - ");
         if (completada){
             sb.append("Completada");
         } else {
