@@ -2,8 +2,6 @@ import gestores.GestorMisiones;
 import interfaces.InterfazConsola;
 import misiones.Dificultad;
 
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args){
         InterfazConsola consola;
@@ -15,35 +13,35 @@ public class Main {
         // levantamos la interfaz
         consola = new InterfazConsola(gestor);
 
+        // Dificultad dificultad = Dificultad.MEDIO;
+
+        // dificultad.mostrarDificultades();
+
         int opcionElegida;
         int[] opcionesMenuPrincipal = {0,1,2,3,9};
+
+        generarValoresDefault(gestor);
+
+        // System.out.println(gestor.listarMisiones());
+
+        // opcionElegida = 1;
+        // consola.ejecutarAccion(opcionElegida);
 
 
         do {
             opcionElegida = consola.pedirOpcionMenu(consola.menuPrincipal,opcionesMenuPrincipal);
-
-            switch (opcionElegida) {
-                case 0:
-                    consola.hacerDespedida();
-                    break;
-                case 1:
-                    consola.imprimir(gestor.listarMisiones());
-                    break;
-                case 2:
-                    consola.agregarMision(gestor);
-                    break;
-                case 3:
-                    //todo: buscar mision por id - interfaz
-                    consola.buscarMisionPorId(gestor);
-                    break;
-                case 9:
-                    // eliminarMision
-                    consola.borrarMision(gestor);
-                    break;
+            consola.ejecutarAccion(opcionElegida);
+            if (opcionElegida!=0){
+                consola.pulsarIntro();
             }
+        }while (opcionElegida != 0);
+    }
 
-        }while (opcionElegida == 0);
-
+    public static void generarValoresDefault(GestorMisiones gestor){
+        gestor.crearMision(1,"Inicia sesión", Dificultad.FACIL,1,10);
+        gestor.crearMision(2,"Mata a tu primer enemigo", Dificultad.FACIL,5,10);
+        gestor.crearMision(3,"Encuentra oro", Dificultad.MEDIO,2,50);
+        gestor.crearMision(4,"Encuentra diamante", Dificultad.DIFICIL,10,100);
     }
 
 }

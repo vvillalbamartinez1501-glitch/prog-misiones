@@ -110,4 +110,10 @@ public class Mision {
         }
         return sb.toString();
     }
+
+    public int consultarMultiplicadorExperiencia(){
+        return dificultad.getMultiplicadorExperiencia();
+    }
+
+
 }

@@ -7,10 +7,12 @@ import misiones.Mision;
 import java.util.Scanner;
 
 public class InterfazConsola {
-    GestorMisiones gestor;
+    private GestorMisiones gestor;
+    private Scanner sc;
 
     public InterfazConsola(GestorMisiones gestor) {
         this.gestor = gestor;
+        this.sc = new Scanner(System.in);
     }
 
     public String menuPrincipal =
@@ -37,11 +39,10 @@ public class InterfazConsola {
     public int pedirOpcionMenu(String menu, int[] opcionesDisponibles){
         int opcionElegida;
         System.out.println("Ingresa una opción (elección mediante número): ");
-        Scanner sc = new Scanner(System.in);
         do{
             System.out.println(menu);
             opcionElegida = sc.nextInt();
-        } while (validarOpcionMenu(opcionElegida, opcionesDisponibles));
+        } while (!validarOpcionMenu(opcionElegida, opcionesDisponibles));
         System.out.println(menu);
         return  opcionElegida;
     }
@@ -49,7 +50,7 @@ public class InterfazConsola {
 
     public boolean validarOpcionMenu(int opcionElegida, int[] opcionesDisponibles){
         boolean opcionValida = false;
-        for (int i = 0 ; opcionValida == false && i  < opcionesDisponibles.length ; i++){
+        for (int i = 0 ; !opcionValida && i  < opcionesDisponibles.length ; i++){
             if (opcionesDisponibles[i] == opcionElegida){
                 opcionValida = true;
             }
@@ -130,7 +131,6 @@ public class InterfazConsola {
 
     public Mision pedirIdMision(String texto, GestorMisiones gestor){
         int idElegido;
-        Scanner sc = new Scanner(System.in);
         Mision resultado;
         do{
             System.out.println(texto);
@@ -181,16 +181,32 @@ public class InterfazConsola {
         return  numeroIntroducido;
     }
 
-    public static void hacerDespedida(){
+    public void hacerDespedida(){
         System.out.println("Cerrando el programa...");
     }
 
-    public static void imprimir(String impresion){
-        System.out.println(impresion);
+
+    public void ejecutarAccion(int opcionElegida){
+        switch (opcionElegida) {
+            case 0:
+                hacerDespedida();
+                break;
+            case 1:
+                System.out.println(gestor.listarMisiones());
+                break;
+            case 2:
+                agregarMision(gestor);
+                break;
+            case 3:
+                buscarMisionPorId(gestor);
+                break;
+            case 9:
+                borrarMision(gestor);
+                break;
+        }
     }
 
-    public static void menuBuscarMision(){
-
+    public void pulsarIntro(){
+        System.out.println("----------- Pulsa Intro para continuar -----------");
     }
-
 }

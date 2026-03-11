@@ -96,4 +96,19 @@ public class GestorMisiones {
         return  misionlEiminada;
     }
 
+
+    /** metodo polimorfico de eliminar misino, esta vez recibiendo un objeto
+     * metodo que elimina una mision
+     * @param mision la mision a eliminar
+     * @return la mision que ha sido eliminada
+     */
+    public Mision eliminarMisionPorId(Mision mision){
+
+        if (mision != null) {
+            misiones.remove(mision);
+        }
+
+        return  mision;
+    }
+
 }
