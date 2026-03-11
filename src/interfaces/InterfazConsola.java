@@ -2,6 +2,7 @@ package interfaces;
 
 import gestores.GestorMisiones;
 import misiones.Dificultad;
+import misiones.Mision;
 
 import java.util.Scanner;
 
@@ -87,6 +88,61 @@ public class InterfazConsola {
         return posicionNuevaMision;
     }
 
+    public void borrarMision(GestorMisiones gestor){
+        String confirmacionEliminacion ;
+        int[] opcionesDisponibles = {1,9};
+
+        int opcionElegida;
+        Mision misionAEliminar;
+
+        System.out.println(gestor.listarMisiones());
+
+        // pedir id hasta que haya mision
+
+        misionAEliminar = pedirIdMision("Introduce el id de la misión que quieres eliminar",gestor);
+
+        confirmacionEliminacion = ("Estás seguro que quieres eliminar la misión?" +
+                "1. Cancelar \t \t" +
+                "9. Confirmar");
+
+        opcionElegida = pedirOpcionMenu(confirmacionEliminacion,opcionesDisponibles);
+
+        switch(opcionElegida){
+            case 1:
+                gestor.eliminarMisionPorId(misionAEliminar.getId());
+                break;
+            case 9:
+                System.out.println("Operación cancelada");
+                break;
+        }
+    }
+
+    public void buscarMisionPorId(GestorMisiones gestor){
+        Mision resultado;
+
+        gestor.listarMisiones();
+
+        resultado = pedirIdMision("Introduce el id de la misión",gestor);
+
+        System.out.println(resultado.toString());
+    }
+
+    public Mision pedirIdMision(String texto, GestorMisiones gestor){
+        int idElegido;
+        Scanner sc = new Scanner(System.in);
+        Mision resultado;
+        do{
+            System.out.println(texto);
+            idElegido = sc.nextInt();
+            resultado = gestor.buscarMisionPorId(idElegido);
+            if (resultado == null){
+                System.out.println("No existe una misión ocn ese id, vuelve a intentarlo");
+            }
+        } while (resultado != null);
+
+        return resultado;
+    }
+
     public static int pedirId(){
         int id;
         Scanner sc = new Scanner(System.in);
@@ -136,6 +192,18 @@ public class InterfazConsola {
 
         }while (numeroIntroducido > 0);
         return  numeroIntroducido;
+    }
+
+    public static void hacerDespedida(){
+        System.out.println("Cerrando el programa...");
+    }
+
+    public static void imprimir(String impresion){
+        System.out.println(impresion);
+    }
+
+    public static void menuBuscarMision(){
+
     }
 
 }
