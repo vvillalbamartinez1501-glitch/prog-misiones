@@ -1,20 +1,22 @@
+package misiones;
+
 public class Mision {
     private int id;
     private String nombre;
-    private String dificultad;
+    private Dificultad dificultad;
     private int nivelRecomendado;
     private int recompensaExperiencia;
     private boolean completada;
 
     /**
-     * metodo constructor de la clase Mision
+     * metodo constructor de la clase misiones.Mision
      * @param id
      * @param nombre
      * @param dificultad
      * @param nivelRecomendado
      * @param recompensaExperiencia
      */
-    public Mision(int id, String nombre, String dificultad, int nivelRecomendado, int recompensaExperiencia) {
+    public Mision(int id, String nombre, Dificultad dificultad, int nivelRecomendado, int recompensaExperiencia) {
         this.id = id;
         this.nombre = nombre;
         this.dificultad = dificultad;
@@ -45,7 +47,7 @@ public class Mision {
      * getter de la dificultad de la mision
      * @return nombre de la dificultad de la mision
      */
-    public String getDificultad() {
+    public Dificultad getDificultad() {
         return dificultad;
     }
 
@@ -77,7 +79,7 @@ public class Mision {
     }
 
     /**
-     * toString de la clase Mision
+     * toString de la clase misiones.Mision
      * @return la informacion de la mision en formato toString
      */
 
