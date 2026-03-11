@@ -65,10 +65,11 @@ public class InterfazConsola {
         int nivelRecomendado;
         int recompensaExperiencia;
         int posicionNuevaMision;
+        int[] opcionesDificultad = {1,2,3,4};
 
         id = pedirId();
         nombre = pedirNombre();
-        numeroDificultad = pedirDificultad();
+        numeroDificultad = pedirOpcionMenu(menuDificultades,opcionesDificultad);
         switch (numeroDificultad){
             case 1 :
                 dificultad = Dificultad.FACIL;
@@ -164,20 +165,6 @@ public class InterfazConsola {
         nombre = sc.next();
         //} while ();
         return nombre;
-    }
-
-    public static int pedirDificultad(){
-        int dificultad;
-        Scanner sc = new Scanner(System.in);
-        do {
-            /* TODO: MOSTRAR MENU DIFICULTADES*/
-            dificultad = sc.nextInt();
-            if (dificultad < 0 || dificultad > 4){
-                System.out.println("Error, vuelve a intentarlo");
-            }
-
-        } while (dificultad > 0 && dificultad < 4 );
-        return dificultad;
     }
 
     public static int pedirIntPositivo(String textoPeticion){
