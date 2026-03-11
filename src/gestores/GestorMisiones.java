@@ -86,14 +86,14 @@ public class GestorMisiones {
      * @return la misión eliminada
      */
     public Mision eliminarMisionPorId(int idMisionAEliminar){
-        Mision misionlLiminada;
+        Mision misionlEiminada;
 
-        misionlLiminada = misiones.get(idMisionAEliminar);
-        if (misionlLiminada != null) {
+        misionlEiminada = misiones.get(idMisionAEliminar);
+        if (misionlEiminada != null) {
             misiones.remove(buscarMisionPorId(idMisionAEliminar));
         }
 
-        return  misionlLiminada;
+        return  misionlEiminada;
     }
 
 }
