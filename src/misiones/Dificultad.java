@@ -1,15 +1,17 @@
 package misiones;
 
 public enum Dificultad {
-    FACIL (1,1),
-    MEDIO (5,5),
-    DIFICIL(10,10);
+    FACIL ("Fácil",1,1),
+    MEDIO ("Medio",5,5),
+    DIFICIL("Difícil",10,10);
 
 
+    private final String nombre;
     private int nivel;
     private int multiplicadorExperiencia;
 
-    private Dificultad(int nivel, int multiplicadorExperiencia) {
+    private Dificultad(String nombre,int nivel, int multiplicadorExperiencia) {
+        this.nombre = nombre;
         this.nivel = nivel;
         this.multiplicadorExperiencia = multiplicadorExperiencia;
     }
@@ -21,7 +23,12 @@ public enum Dificultad {
     public int getMultiplicadorExperiencia() {
         return multiplicadorExperiencia;
     }
+    @Override
+    public String toString() {
+        return nombre;
+    }
 
+    /*
     @Override
     public String toString() {
         return "Dificultad{" +
@@ -29,6 +36,7 @@ public enum Dificultad {
                 ", multiplicadorExperiencia=" + multiplicadorExperiencia +
                 '}';
     }
+     */
 
     public void mostrarDificultades(){
         for(Dificultad d : Dificultad.values()){
