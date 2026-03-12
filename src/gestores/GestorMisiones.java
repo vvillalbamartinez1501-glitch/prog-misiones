@@ -8,6 +8,9 @@ import java.util.ArrayList;
 public class GestorMisiones {
     private ArrayList<Mision> misiones;
 
+    /**
+     * metodo constructor de GestorMisiones
+     */
     public GestorMisiones() {
         this.misiones = new ArrayList<>();
     }
@@ -30,6 +33,12 @@ public class GestorMisiones {
         idMisionCreada  = agregarMision(mision);
         return idMisionCreada;
     }
+
+    /**
+     * metodo que agrega una mision al array list de misiones
+     * @param mision la mision a agregar
+     * @return el id de la mision agregada
+     */
 
     public int agregarMision(Mision mision){
         this.misiones.add(mision);
@@ -109,6 +118,14 @@ public class GestorMisiones {
         }
 
         return  mision;
+    }
+
+    /**
+     * metodo que cuenta el numero de misiones que hay registradas en el gestor
+     * @return el numero de misiones en el gestor
+     */
+    public int contarMisiones(){
+        return misiones.size();
     }
 
 }
