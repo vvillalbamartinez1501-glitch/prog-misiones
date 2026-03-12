@@ -62,7 +62,7 @@ public class GestorMisiones {
                 sb.append("\n");
             }
         } else {
-            sb.append("Todavía no ha sido registrada ninguna misión");
+            sb.append("No hay misiones registradas");
             sb.append("\n");
         }
         return sb.toString();
@@ -78,7 +78,7 @@ public class GestorMisiones {
     public Mision buscarMisionPorId(int idMisionBuscada){
         Mision misionBuscada = null;
         int posicionComprobacion = 0 ;
-        while (!misiones.isEmpty() && misionBuscada == null) {
+        while (!misiones.isEmpty() && posicionComprobacion < misiones.size() && misionBuscada == null) {
             if (misiones.get(posicionComprobacion) != null && misiones.get(posicionComprobacion).getId() == idMisionBuscada){
                 misionBuscada = misiones.get(posicionComprobacion);
             }
