@@ -17,8 +17,10 @@ public class Main {
 
         // dificultad.mostrarDificultades();
 
+
         int opcionElegida;
-        int[] opcionesMenuPrincipal = {0,1,2,3,9};
+        int[] opcionesMenuPrincipal = {0,1,2,3,4,9};
+
 
         generarValoresDefault(gestor);
 
@@ -32,10 +34,16 @@ public class Main {
             opcionElegida = consola.pedirOpcionMenu(consola.menuPrincipal,opcionesMenuPrincipal);
             consola.ejecutarAccion(opcionElegida);
             if (opcionElegida!=0){
-                consola.pulsarIntro();
+                // consola.pulsarIntro();
             }
         }while (opcionElegida != 0);
     }
+
+
+
+
+
+
 
     public static void generarValoresDefault(GestorMisiones gestor){
         gestor.crearMision(1,"Inicia sesión", Dificultad.FACIL,1,10);
