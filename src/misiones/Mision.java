@@ -111,6 +111,11 @@ public class Mision {
         return sb.toString();
     }
 
+    /**
+     * metodo que devuelve el multiplicador de experiencia de la recompensa de la mision
+     * @return el multiplicador de experiencia correspondiente a la dificultad
+     */
+
     public int consultarMultiplicadorExperiencia(){
         return dificultad.getMultiplicadorExperiencia();
     }
