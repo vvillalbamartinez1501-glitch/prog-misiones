@@ -78,6 +78,30 @@ public class Mision {
         return completada;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setDificultad(Dificultad dificultad) {
+        this.dificultad = dificultad;
+    }
+
+    public void setNivelRecomendado(int nivelRecomendado) {
+        this.nivelRecomendado = nivelRecomendado;
+    }
+
+    public void setRecompensaExperiencia(int recompensaExperiencia) {
+        this.recompensaExperiencia = recompensaExperiencia;
+    }
+
+    public void setCompletada(boolean completada) {
+        this.completada = completada;
+    }
+
     /**
      * toString de la clase misiones.Mision
      * @return la informacion de la mision en formato toString
