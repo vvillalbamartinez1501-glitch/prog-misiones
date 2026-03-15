@@ -19,7 +19,7 @@ public class Main {
 
 
         int opcionElegida;
-        int[] opcionesMenuPrincipal = {0,1,2,3,4,9};
+        int[] opcionesMenuPrincipal = {0,1,2,3,4,5,9};
 
 
         generarValoresDefault(gestor);
